@@ -5,10 +5,17 @@ import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
 import itemsData from "./items.json"; 
 import { useState } from "react"; 
+import { useUserAuth } from "../_utils/auth-context";
+
 
 export default function Page() {
     const [items, setItems] = useState(itemsData);
     const [selectedItemName, setSelectedItemName] = useState("");
+    const {user, gitHubSignIn, firebaseSignOut} = useUserAuth();
+    if (!user) {
+        return <p> You are not allowed to use the app.</p>
+    }
+    
 
     const handleAddItem = (item) => {
         setItems([...items, item]);
