@@ -20,7 +20,8 @@ export default function Page() {
       )}
       </p>
       <br></br>
-      <p> <Link href="week-8/shopping-list/">Shopping List Link HERE</Link> </p>
+      <p> <Link href="week-10/shopping-list/">Shopping List Link HERE</Link> </p>
+
     </div>
   );
 }
